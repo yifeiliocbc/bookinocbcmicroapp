@@ -1,20 +1,27 @@
 package com.ocbc.bookinocbcmicroapp.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
+import javax.persistence.Column;
+import javax.persistence.MappedSuperclass;
 import java.util.Date;
 
-@Data
+@Getter
+@Setter
+@MappedSuperclass
 public class BaseEntity {
-    private Long id;
 
     @JsonIgnore
+    @Column(insertable = false, updatable = false)
     private Date createTime;
 
     @JsonIgnore
+    @Column(insertable = false, updatable = false)
     private Date updateTime;
 
     @JsonIgnore
+    @Column(insertable = false, updatable = false)
     private Date deleteTime;
 }

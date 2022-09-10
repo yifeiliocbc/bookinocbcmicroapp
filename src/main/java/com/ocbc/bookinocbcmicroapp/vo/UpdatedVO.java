@@ -4,9 +4,6 @@ import com.ocbc.bookinocbcmicroapp.constant.Code;
 import com.ocbc.bookinocbcmicroapp.util.ResponseUtil;
 import org.springframework.http.HttpStatus;
 
-/**
- * @author pedro@TaleLin
- */
 public class UpdatedVO<T> extends UnifyResponseVO {
 
     public UpdatedVO() {
