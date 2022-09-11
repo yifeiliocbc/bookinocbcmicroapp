@@ -12,18 +12,17 @@ import java.util.Map;
 @Component
 public class ExceptionCodeConfiguration {
 
-    private Map<Integer, String> codes = new HashMap<>();
+    private static Map<Integer, String> codes = new HashMap<>();
 
     public Map<Integer, String> getCodes() {
         return codes;
     }
 
     public void setCodes(Map<Integer, String> codes) {
-        this.codes = codes;
+        ExceptionCodeConfiguration.codes = codes;
     }
 
-    public String getMessage(int code) {
-        String message = codes.get(code);
-        return message;
+    public static String getMessage(int code) {
+        return codes.get(code);
     }
 }

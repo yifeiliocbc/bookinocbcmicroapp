@@ -46,8 +46,7 @@ public class GlobalExceptionAdvice {
         headers.setContentType(MediaType.APPLICATION_JSON);
         HttpStatus httpStatus = HttpStatus.resolve(e.getHttpCode());
 
-        ResponseEntity<UnifyResponseVO> r = new ResponseEntity<>(message, headers, httpStatus);
-        return r;
+        return new ResponseEntity<>(message, headers, httpStatus);
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
