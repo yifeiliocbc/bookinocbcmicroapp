@@ -17,6 +17,7 @@
         <java.version>11</java.version>
         <hutool.version>5.0.6</hutool.version>
         <dozer.mapper.version>6.5.0</dozer.mapper.version>
+        <auth0.jwt.version>3.8.1</auth0.jwt.version>
     </properties>
     <dependencies>
         <dependency>
@@ -73,6 +74,12 @@
             <groupId>com.github.dozermapper</groupId>
             <artifactId>dozer-core</artifactId>
             <version>${dozer.mapper.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.auth0</groupId>
+            <artifactId>java-jwt</artifactId>
+            <version>${auth0.jwt.version}</version>
         </dependency>
     </dependencies>
 

@@ -58,7 +58,7 @@ public class GlobalExceptionAdvice {
 
         List<ObjectError> errors = e.getBindingResult().getAllErrors();
         String message = this.formatAllErrorMessages(errors);
-        return new UnifyResponseVO(10001, message);
+        return new UnifyResponseVO(10000, message);
     }
 
     @ExceptionHandler(ConstraintViolationException.class)
@@ -69,7 +69,7 @@ public class GlobalExceptionAdvice {
         String method = req.getMethod();
         String message = e.getMessage();
 
-        return new UnifyResponseVO<>(10001, message);
+        return new UnifyResponseVO<>(10000, message);
     }
 
     private String formatAllErrorMessages(List<ObjectError> errors) {
