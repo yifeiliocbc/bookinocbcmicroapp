@@ -4,7 +4,6 @@ import com.ocbc.bookinocbcmicroapp.dto.CreateOrUpdateBookDTO;
 import com.ocbc.bookinocbcmicroapp.entity.Book;
 import com.ocbc.bookinocbcmicroapp.repository.BookRepository;
 import com.ocbc.bookinocbcmicroapp.service.BookService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -14,8 +13,11 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements BookService {
 
-    @Autowired
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
+
+    public BookServiceImpl(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+    }
 
     @Override
     public void createBook(CreateOrUpdateBookDTO validator) {
